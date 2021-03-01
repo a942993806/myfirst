@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>大事件-登录/注册</title>
     <!-- 引入 layui 的样式表 -->
-    <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
     <!-- 引入自己的css -->
-    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
             <form class="layui-form" id="logins">
                 <div class="layui-form-item">
                     <i class="layui-icon layui-icon-username"></i>
-                    <input type="text" name="title" required lay-verify="required" placeholder="请输入用户名"
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入用户名"
                         autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
@@ -69,9 +69,10 @@
         </div>
     </div>
     <!-- 引入js文件 -->
-    <script src="./assets/lib/layui/layui.all.js"></script>
-    <script src="./assets/lib/jquery.js"></script>
-    <script src="./assets/js/login.js"></script>
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
+    <script src="/assets/js/login.js"></script>
 </body>
 
 </html>

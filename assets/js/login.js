@@ -32,14 +32,33 @@ $(function () {
 
     //提交注册
 
-    $('#login2').submit(function (e) {
+    // $('#login2').submit(function (e) {
+    //     e.preventDefault();
+    //     var data = {
+    //         username: $('.login_zc name[username]').val(),
+    //         password: $('.login_zc name[password]').val()
+
+    //     }
+    //     $.post("http://ajax.frontend.itheima.net/api/reguser",
+    //         data,
+    //         function (res) {
+    //             if (res.status !== 0) {
+    //                 return layer.msg(res.message)
+    //             }
+    //             layer.msg(res.message)
+    //             $('#goLogin').click()
+    //         },
+
+    //     );
+    // });
+    $('#login2').on('submit', function (e) {
         e.preventDefault();
-        const data = {
-            username: $('.login_zc name[username]').val(),
-            password: $('.login_zc name[password]').val()
+        var data = {
+            username: $('.login_zc [name=username]').val(),
+            password: $('.login_zc [name=password]').val()
 
         }
-        $.post("http://ajax.frontend.itheima.net/api/reguser",
+        $.post("/api/reguser",
             data,
             function (res) {
                 if (res.status !== 0) {
@@ -54,12 +73,9 @@ $(function () {
     //用户 登录
     $('#logins').on('submit', function (e) {
         e.preventDefault();
-        const data = {
-            username: $('.login_zc name[username]').val(),
-            password: $('.login_zc name[password]').val()
-
-        }
-        $.post("http://ajax.frontend.itheima.net/api/login", data,
+        var data = $(this).serialize()
+        $.post("/api/login",
+            data,
             function (res) {
                 if (res.status !== 0) {
                     return layer.msg(res.message)
